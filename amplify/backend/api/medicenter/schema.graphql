@@ -1,0 +1,79 @@
+type Condition @model @auth(rules: [{ allow:owner }]) {
+  conditionId: ID!
+  name: String!
+  details: String
+  diagnosisDate: String!
+  diagnosingDoctor: String!
+  hospitalCenter: String!
+}
+
+type Patient @model @auth(rules: [{ allow:owner }]) {
+  id: ID! 
+  ssn: Int! 
+  firstName: String!
+  lastName: String!
+  hasPiercings: Boolean!
+  bloodType: String!
+  gender: String!
+  sex: String!
+  birthDate: String!
+  hasConditions: [Condition]
+  hasMedications: [Medication]
+  hasAllergies: [Allergy]
+  hasSurgeries: [Surgery]
+  hasProviders: [Provider]
+  hasFamily: [FamilyMember]
+}
+
+type Medication @model @auth(rules: [{ allow:owner }]) {
+  medicationId: ID!
+  name: String!
+  type: String!
+  manufacturer: String!
+  dosage: String!
+  current: Boolean!
+  hasProvider: Provider!
+  dateOfPrescription: String
+}
+
+type Allergy @model @auth(rules: [{ allow:owner }]) {
+  allergyId: ID!
+  name: String!
+  diagnosisDate: String
+}
+
+
+type Surgery @model @auth(rules: [{ allow:owner }]) {
+  surgeryId: ID!
+  name: String!
+  date: String!
+  provider: Provider
+}
+
+type Provider @model @auth(rules: [{ allow:owner }]) {
+  providerId: ID!
+  name: String!
+  hospitalOffice: HealthcareLoc
+  specialty: String!  
+}
+
+type HealthcareLoc @model @auth(rules: [{ allow:owner }]) {
+  healthLocId: ID!
+  name: String!
+  address: Address
+}
+
+type Address @model @auth(rules: [{ allow:owner}]) {
+  street: String!
+  city: String!
+  state: String!
+  zipcode: Int!
+}
+
+type FamilyMember @model @auth(rules: [{ allow:owner }]) {
+  familyId: ID!
+  hasConditions: [Condition]
+  firstName: String!
+  lastName: String!
+  birthDate: String!
+}

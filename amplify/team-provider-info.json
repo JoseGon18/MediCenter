@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify40c780b344584-staging-52141-authRole",
+      "UnauthRoleArn": "arn:aws:iam::286621853487:role/amplify-amplify40c780b344584-staging-52141-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::286621853487:role/amplify-amplify40c780b344584-staging-52141-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplify40c780b344584-staging-52141-deployment",
+      "UnauthRoleName": "amplify-amplify40c780b344584-staging-52141-unauthRole",
+      "StackName": "amplify-amplify40c780b344584-staging-52141",
+      "StackId": "arn:aws:cloudformation:us-east-1:286621853487:stack/amplify-amplify40c780b344584-staging-52141/453c8450-b957-11ec-9aa3-120f8414fb73",
+      "AmplifyAppId": "d392c6c8qln6qh"
+    },
+    "categories": {
+      "auth": {
+        "medicenter3e07903a": {}
+      }
+    }
+  }
+}
